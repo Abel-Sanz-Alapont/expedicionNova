@@ -23,4 +23,58 @@ class EntidadEstelar{
     public function getTipo(){
         return "Tipo Desconocido";
     }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     */
+    public function setId($id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nivelEstabilidad
+     */
+    public function getNivelEstabilidad()
+    {
+        return $this->nivelEstabilidad;
+    }
+
+    /**
+     * Set the value of nivelEstabilidad
+     */
+    public function setNivelEstabilidad($nivelEstabilidad): self
+    {
+        $this->nivelEstabilidad = $nivelEstabilidad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of planetaOrigen
+     */
+    public function getPlanetaOrigen()
+    {
+        return $this->planetaOrigen;
+    }
+
+    /**
+     * Set the value of planetaOrigen
+     */
+    public function setPlanetaOrigen($planetaOrigen): self
+    {
+        $this->planetaOrigen = $planetaOrigen;
+
+        return $this;
+    }
 }

@@ -19,4 +19,22 @@ class MineralRaro extends EntidadEstelar{
         return "Mineral Raro";
     }
 
+
+    /**
+     * Get the value of dureza
+     */
+    public function getDureza()
+    {
+        return $this->dureza;
+    }
+
+    /**
+     * Set the value of dureza
+     */
+    public function setDureza($dureza): self
+    {
+        $this->dureza = $dureza;
+
+        return $this;
+    }
 }

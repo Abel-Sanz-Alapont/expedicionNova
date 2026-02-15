@@ -19,4 +19,22 @@ class ArtefactoAntiguo extends EntidadEstelar{
         return "Antiguedad(Años Luz)";
     }
 
+
+    /**
+     * Get the value of antiguedad
+     */
+    public function getAntiguedad()
+    {
+        return $this->antiguedad;
+    }
+
+    /**
+     * Set the value of antiguedad
+     */
+    public function setAntiguedad($antiguedad): self
+    {
+        $this->antiguedad = $antiguedad;
+
+        return $this;
+    }
 }

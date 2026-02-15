@@ -19,4 +19,22 @@ class FormadeVida extends EntidadEstelar{
         return "Forma de Vida";
     }
 
+
+    /**
+     * Get the value of dieta
+     */
+    public function getDieta()
+    {
+        return $this->dieta;
+    }
+
+    /**
+     * Set the value of dieta
+     */
+    public function setDieta($dieta): self
+    {
+        $this->dieta = $dieta;
+
+        return $this;
+    }
 }

@@ -97,17 +97,6 @@ class gestorNave
             }
         }
     }
-    public function actualizarMoto($matricula, $marca, $cilindrada)
-    {
-
-        foreach ($_SESSION['entidades'] as $i => $exposicion) {
-            if ($exposicion->getMatricula() == $matricula) {
-                $_SESSION['entidades'][$i]->setMarca($marca);
-                $_SESSION['entidades'][$i]->setCilindrada($cilindrada);
-            }
-        }
-    }
-
     public function eliminar($id)
     {
         foreach ($_SESSION['entidades'] as  $i => $exposicion) {

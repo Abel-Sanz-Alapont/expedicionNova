@@ -65,7 +65,7 @@
         <?php endfor; ?>
 
         <!--LISTADO DE Minerales-->
-        <h3> Minerales
+        <h3> Lista de Minerales
             <table border="1" cellpadding="10">
                 <tr>
                     <th>Id</th>
@@ -114,7 +114,7 @@
                 <a href="index.php?accion=index&pActualMinerales=<?= $i?>"><?= $i ?></a>
             <?php endfor; ?>
             <!--LISTADO DE Antiguedades-->
-            <h3> Antiguedades
+            <h3> Listado de Antiguedades
             <table border="1" cellpadding="10">
                 <tr>
                     <th>Id</th>

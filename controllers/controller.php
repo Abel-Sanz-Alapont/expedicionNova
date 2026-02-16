@@ -39,7 +39,7 @@ class Controller
         include "views/listar.php";
     }
 
-    //metodos para crear editar y eliminar 
+    //metodos para crear 
 
     public function crear()
     {
@@ -74,6 +74,7 @@ class Controller
 
         include "views/form.php";
     }
+    //metodo para Editar Formas de Vida
     public function editarEntidad(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -83,6 +84,7 @@ class Controller
             exit();
         }
     }
+    //metodo para Editar Minerales
     public function editarMineral(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -92,6 +94,7 @@ class Controller
             exit();
         }
     }
+    //metodo para Editar Antiguedades
     public function editarAntiguedad(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -102,7 +105,7 @@ class Controller
         }
     }
     
-
+    //metodo para Eliminar
     public function eliminar()
     {
         

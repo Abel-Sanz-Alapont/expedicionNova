@@ -13,7 +13,7 @@ class gestorNave{
     {
         $_SESSION['entidades'][] = $entidad;
     }
-    //Añadimos la Funcion de listar forma de vida
+    //Añadimos la Funcion de listar Forma de Vida
     public function listarEntidades()
     {
         $entidad=[];
@@ -24,7 +24,7 @@ class gestorNave{
         }
         return $entidad;
     }
-    //Añadimos la Funcion de listar mineral
+    //Añadimos la Funcion de listar Mineral
     public function listarMinerales()
     {
         $minerales=[];
@@ -35,7 +35,7 @@ class gestorNave{
         }
         return $minerales;
     }
-    //Añadimos la Funcion de listar mineral
+    //Añadimos la Funcion de listar Artefacto
     public function listarAntiguedades()
     {
         $antiguedades=[];
@@ -46,11 +46,14 @@ class gestorNave{
         }
         return $antiguedades;
     }
+
+    //Listamos Entidades
     public function listar()
     {
         return $_SESSION['entidades'];
     }
 
+    //Funcion de Buscar
     public function buscar($id)
     {
         foreach ($_SESSION['entidades'] as $entidad) {
@@ -59,7 +62,8 @@ class gestorNave{
             }
         }
     }
-
+    
+    //Funcion de actualizar Forma de Vida
     public function actualizarEntidad($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dieta)
     {
 
@@ -72,6 +76,7 @@ class gestorNave{
             }
         }
     }
+    //Funcion de actualizar Mineral
     public function actualizarMineral($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dureza)
     {
 
@@ -84,6 +89,7 @@ class gestorNave{
             }
         }
     }
+    //Funcion de actualizar Antiguedad
     public function actualizarAntiguedad($id,$nombre,$planetaOrigen,$nivelEstabilidad,$antiguedad)
     {
 
@@ -96,6 +102,7 @@ class gestorNave{
             }
         }
     }
+    //Funcion de Eliminar
     public function eliminar($id)
     {
         foreach ($_SESSION['entidades'] as  $i => $entidad) {

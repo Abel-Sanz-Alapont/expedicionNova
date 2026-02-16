@@ -2,6 +2,7 @@
 require_once "autoload.php";
 session_start();
 
+
 $gestor = new gestorNave();
 
 $controller = new Controller($gestor);
@@ -14,7 +15,7 @@ switch ($accion) {
         $controller->crear();
         break;
 
-    case 'editarEntidad':
+    case 'editarVida':
         $controller->editarEntidad();
         break;
 

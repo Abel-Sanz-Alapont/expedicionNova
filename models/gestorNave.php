@@ -40,7 +40,7 @@ class gestorNave{
     {
         $antiguedades=[];
         for ($i=0; $i <count($_SESSION['entidades']) ; $i++) { 
-            if(isset($_SESSION['entidades'][$i]) &&get_class($_SESSION['entidades'][$i])=="ArtefactoAntiguo"){
+            if(isset($_SESSION['entidades'][$i]) && get_class($_SESSION['entidades'][$i])=="ArtefactoAntiguo"){
                 $antiguedades[]=$_SESSION['entidades'][$i];
             }
         }
@@ -68,11 +68,12 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if (($entidad instanceof FormadeVida)&& $entidad->getId() == $id) {
+            if (get_class($entidad)=="FormadeVida"&& $entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
-                $_SESSION['entidades'][$i]->setDieta($dieta);    
+                $_SESSION['entidades'][$i]->setDieta($dieta);
+                break;    
             }
         }
     }
@@ -81,11 +82,12 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if (($entidad instanceof MineralRaro)&& $entidad->getId() == $id) {
+            if (get_class($entidad)=="MineralRaro" &&$entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
-                $_SESSION['entidades'][$i]->setDureza($dureza);            
+                $_SESSION['entidades'][$i]->setDureza($dureza);
+                break;          
             }
         }
     }
@@ -94,11 +96,12 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if (($entidad instanceof ArtefactoAntiguo)&&$entidad->getId() == $id) {
+            if (get_class($entidad)=="ArtefactoAntiguo"&&$entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
                 $_SESSION['entidades'][$i]->setAntiguedad($antiguedad);
+                break;    
             }
         }
     }

@@ -24,6 +24,8 @@ class gestorNave{
         }
         return $entidad;
     }
+    //Funciones de Actualizar
+
     //Añadimos la Funcion de listar Mineral
     public function listarMinerales()
     {

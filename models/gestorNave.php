@@ -1,7 +1,6 @@
 <?php
 
-class gestorNave
-{
+class gestorNave{
 
     public function __construct()
     {
@@ -19,7 +18,7 @@ class gestorNave
     {
         $entidad=[];
         for ($i=0; $i <count($_SESSION['entidades']) ; $i++) { 
-            if(get_class($_SESSION['entidades'][$i])=="entidad"){
+            if(isset($_SESSION['entidades'][$i]) && get_class($_SESSION['entidades'][$i])=="FormadeVida"){
                 $entidad[]=$_SESSION['entidades'][$i];
             }
         }
@@ -30,8 +29,8 @@ class gestorNave
     {
         $minerales=[];
         for ($i=0; $i <count($_SESSION['entidades']) ; $i++) { 
-            if(get_class($_SESSION['entidades'][$i])=="mineral"){
-                $motos[]=$_SESSION['entidades'][$i];
+            if(isset($_SESSION['entidades'][$i]) && get_class($_SESSION['entidades'][$i])=="MineralRaro"){
+                $minerales[]=$_SESSION['entidades'][$i];
             }
         }
         return $minerales;
@@ -41,8 +40,8 @@ class gestorNave
     {
         $antiguedades=[];
         for ($i=0; $i <count($_SESSION['entidades']) ; $i++) { 
-            if(get_class($_SESSION['entidades'][$i])=="antiguedades"){
-                $motos[]=$_SESSION['entidades'][$i];
+            if(isset($_SESSION['entidades'][$i]) &&get_class($_SESSION['entidades'][$i])=="ArtefactoAntiguo"){
+                $antiguedades[]=$_SESSION['entidades'][$i];
             }
         }
         return $antiguedades;
@@ -64,8 +63,8 @@ class gestorNave
     public function actualizarEntidad($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dieta)
     {
 
-        foreach ($_SESSION['entidades'] as $i => $id) {
-            if ($id->getId() == $id) {
+        foreach ($_SESSION['entidades'] as $i => $entidad) {
+            if ($entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
@@ -76,8 +75,8 @@ class gestorNave
     public function actualizarMineral($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dureza)
     {
 
-        foreach ($_SESSION['entidades'] as $i => $id) {
-            if ($id->getId() == $id) {
+        foreach ($_SESSION['entidades'] as $i => $entidad) {
+            if ($entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
@@ -88,8 +87,8 @@ class gestorNave
     public function actualizarAntiguedad($id,$nombre,$planetaOrigen,$nivelEstabilidad,$antiguedad)
     {
 
-        foreach ($_SESSION['entidades'] as $i => $id) {
-            if ($id->getId() == $id) {
+        foreach ($_SESSION['entidades'] as $i => $entidad) {
+            if ($entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);

@@ -1,6 +1,6 @@
 <?php
 
-class EntidadesController
+class Controller
 {
 
     private $gestor;
@@ -24,7 +24,7 @@ class EntidadesController
         $mineral = $this->gestor->listarMinerales();
         $totalMineral=count($mineral);
         $mineralPorPaginas=5;
-        $totalMineral=ceil($totalMineral/$mineralPorPaginas);
+        $totalPaginasMineral=ceil($totalMineral/$mineralPorPaginas);
         $paginaActualMineral=($_GET['pActualMinerales'] ?? 1);
         $mineralVidaAcortadas=array_slice($mineral,($paginaActualMineral-1)*$mineralPorPaginas,$mineralPorPaginas);
 
@@ -45,42 +45,39 @@ class EntidadesController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $id = $_POST['id'];
-            if ($_POST['dieta'] != null) {
-                $dieta = $_POST['dieta'];
-                $nombre = $_POST['nombre'];
-                $planetaOrigen=$_POST['planetaOrigen'];
-                $nivelEstabilidad=$_POST['nivelEstabilidad'];
+            $nombre = $_POST['nombre'];
+            $planetaOrigen=$_POST['planetaOrigen'];
+            $nivelEstabilidad=$_POST['nivelEstabilidad'];
 
-                $formaVida = new FormadeVida($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dieta);
+            $nuevaEntidad = null;
+            if ($_POST['dieta'] != null) {
+
+                $dieta=$_POST['dieta'];
+                $nuevaEntidad = new FormadeVida($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dieta);
 
             } elseif($_POST['dureza']!=null) {
+
                 $dureza = $_POST['dureza'];
-                $nombre = $_POST['nombre'];
-                $planetaOrigen=$_POST['planetaOrigen'];
-                $nivelEstabilidad=$_POST['nivelEstabilidad'];
-                
-                $mineral = new MineralRaro($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dureza);
+                $nuevaEntidad = new MineralRaro($id,$nombre,$planetaOrigen,$nivelEstabilidad,$dureza);
             }else {
+
                 $antiguedad = $_POST['antiguedad'];
-                $nombre = $_POST['nombre'];
-                $planetaOrigen=$_POST['planetaOrigen'];
-                $nivelEstabilidad=$_POST['nivelEstabilidad'];
-                $antiguedades= new ArtefactoAntiguo($id,$nombre,$planetaOrigen,$nivelEstabilidad,$antiguedad);
+                $nuevaEntidad   = new ArtefactoAntiguo($id,$nombre,$planetaOrigen,$nivelEstabilidad,$antiguedad);
                 
             }
-            $this->gestor->anyadir($formaVida);
-            $this->gestor->anyadir($mineral);
-            $this->gestor->anyadir($antiguedad);
+            if ($nuevaEntidad!=null) {
+                $this->gestor->anyadir($nuevaEntidad);
+            }
             header("Location: index.php");
             exit();
         }
 
-        include "views/crear.php";
+        include "views/form.php";
     }
     public function editarEntidad(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->gestor->actualizarEntidad($_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['dieta']);
+            $this->gestor->actualizarEntidad($_POST['id'],$_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['dieta']);
 
             header("Location: index.php");
             exit();
@@ -90,7 +87,7 @@ class EntidadesController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-            $this->gestor->actualizarMoto($_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['dureza']);
+            $this->gestor->actualizarMineral($_POST['id'],$_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['dureza']);
             header("Location: index.php");
             exit();
         }
@@ -98,7 +95,7 @@ class EntidadesController
     public function editarAntiguedad(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->gestor->actualizarEntidad($_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['antiguedad']);
+            $this->gestor->actualizarAntiguedad($_POST['id'],$_POST['nombre'], $_POST['planetaOrigen'], $_POST['nivelEstabilidad'],$_POST['antiguedad']);
 
             header("Location: index.php");
             exit();

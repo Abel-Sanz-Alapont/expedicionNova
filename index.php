@@ -3,22 +3,31 @@ require_once "autoload.php";
 session_start();
 
 
-$gestor = new GestorVehiculos();
 
-$controller = new VehiculosController($gestor);
+$gestor = new gestorNave();
+
+$controller = new Controller($gestor);
 
 $accion = $_GET['accion'] ?? 'index';
 
 switch ($accion) {
+
     case 'crear':
         $controller->crear();
         break;
-    case 'editarCoche':
-        $controller->editarCoche();
+
+    case 'editarEntidad':
+        $controller->editarEntidad();
         break;
-    case 'editarMoto':
-        $controller->editarMoto();
+
+    case 'editarMineral':
+        $controller->editarMineral();
         break;
+
+    case 'editarAntiguedad':
+        $controller->editarAntiguedad();
+        break;
+        
     case 'eliminar':
         $controller->eliminar();
         break;

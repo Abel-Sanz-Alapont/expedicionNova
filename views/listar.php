@@ -47,9 +47,7 @@
                                 <td><?= $formasVida->getTipo() ?></td>
                                 <td><?= $formasVida->getDieta() ?></td>
                                 <td><?= $formasVida->reaccion() ?></td>
-
-
-                                <td>
+                                <td class="accionesTabla">
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarVida" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $formasVida->getId() ?>"><br>
@@ -70,7 +68,8 @@
                 </table>
                 <!--Paginador de Formas de Vida-->
                 <?php for ($i = 1; $i <= $totalPaginasFormas; $i++): ?>
-                    <a href="index.php?accion=index&pActualFormas=<?= $i ?>"><?= $i ?></a>
+                    Pagina: 
+                    <a href="index.php?accion=index&pActualFormas=<?=  $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>
         <!--LISTADO DE Minerales-->
@@ -99,7 +98,7 @@
                                 <td><?= $mineral->getTipo() ?></td>
                                 <td><?= $mineral->getDureza() ?></td>
                                 <td><?= $mineral->reaccion() ?></td>
-                                <td>
+                                <td class="accionesTabla">
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarMineral" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $mineral->getId() ?>"><br>
@@ -121,6 +120,7 @@
                 </table>
                 <!--Paginador de Minerales-->
                 <?php for ($i = 1; $i <= $totalPaginasMineral; $i++): ?>
+                    Pagina: 
                     <a href="index.php?accion=index&pActualMinerales=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>
@@ -151,7 +151,7 @@
                                 <td><?= $antiguedades->getAntiguedad() ?></td>
                                 <td><?= $antiguedades->reaccion() ?></td>
 
-                                <td>
+                                <td class="accionesTabla">
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarAntiguedad" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $antiguedades->getId() ?>"><br>
@@ -174,6 +174,7 @@
                 </table>
                 <!--Paginador de Antiguedades-->
                 <?php for ($i = 1; $i <= $totalPaginasAntiguedades; $i++): ?>
+                    Pagina: 
                     <a href="index.php?accion=index&pActualAntiguedades=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>

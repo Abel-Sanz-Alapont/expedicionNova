@@ -53,9 +53,9 @@ class gestorNave{
 
     public function buscar($id)
     {
-        foreach ($_SESSION['entidades'] as $exposicion) {
-            if ($id->getId() == $id) {
-                return $exposicion;
+        foreach ($_SESSION['entidades'] as $entidad) {
+            if (($entidad instanceof EntidadEstelar)&& $entidad->getId() == $id) {
+                return $entidad;
             }
         }
     }
@@ -64,11 +64,11 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if ($entidad->getId() == $id) {
+            if (($entidad instanceof FormadeVida)&& $entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
-                $_SESSION['entidades'][$i]->setDieta($dieta);
+                $_SESSION['entidades'][$i]->setDieta($dieta);    
             }
         }
     }
@@ -76,11 +76,11 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if ($entidad->getId() == $id) {
+            if (($entidad instanceof MineralRaro)&& $entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
-                $_SESSION['entidades'][$i]->setDureza($dureza);
+                $_SESSION['entidades'][$i]->setDureza($dureza);            
             }
         }
     }
@@ -88,7 +88,7 @@ class gestorNave{
     {
 
         foreach ($_SESSION['entidades'] as $i => $entidad) {
-            if ($entidad->getId() == $id) {
+            if (($entidad instanceof ArtefactoAntiguo)&&$entidad->getId() == $id) {
                 $_SESSION['entidades'][$i]->setNombre($nombre);
                 $_SESSION['entidades'][$i]->setPlanetaOrigen($planetaOrigen);
                 $_SESSION['entidades'][$i]->setNivelEstabilidad($nivelEstabilidad);
@@ -98,8 +98,8 @@ class gestorNave{
     }
     public function eliminar($id)
     {
-        foreach ($_SESSION['entidades'] as  $i => $exposicion) {
-            if ($exposicion->getId() == $id) {
+        foreach ($_SESSION['entidades'] as  $i => $entidad) {
+            if (($entidad instanceof EntidadEstelar)&&$entidad->getId() == $id) {
                 unset($_SESSION['entidades'][$i]);
                 $_SESSION['entidades'] = array_values($_SESSION['entidades']);
             }

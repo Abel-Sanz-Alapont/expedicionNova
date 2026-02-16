@@ -4,6 +4,7 @@ session_start();
 
 
 
+
 $gestor = new gestorNave();
 
 $controller = new Controller($gestor);
@@ -27,7 +28,7 @@ switch ($accion) {
     case 'editarAntiguedad':
         $controller->editarAntiguedad();
         break;
-        
+
     case 'eliminar':
         $controller->eliminar();
         break;

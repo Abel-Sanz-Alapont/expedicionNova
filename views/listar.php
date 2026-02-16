@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Expedición Nova</title>
+    
+    <link rel="stylesheet" href="css/estiloCss.css">
+</head>
 <html>
 
 <head>

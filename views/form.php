@@ -1,4 +1,9 @@
-        
+        <head>
+            <meta charset="UTF-8">
+            <title>Expedición Nova</title>
+
+            <link rel="stylesheet" href="css/estiloCss.css">
+        </head>
         <h1>Gestor </h1>
         <hr>
         <!--Formulario Crear-->
@@ -14,7 +19,7 @@
             <input type="text" name="planetaOrigen"><br>
 
             NIVEL ESTABILIDAD:
-            <input type="number" min="1" max="10" name="nivelEstabilidad"><br>  
+            <input type="number" min="1" max="10" name="nivelEstabilidad"><br>
 
             <label>DIETA (Si es una Forma de Vida):</label>
             <select name="dieta">
@@ -34,7 +39,7 @@
                 <option value="cuarzo">Cuarzo</option>
                 <option value="topacio">Topacio</option>
                 <option value="corindon">Corindon</option>
-                <option value="diamante">Diamante</option>     
+                <option value="diamante">Diamante</option>
             </select>
             <br>
 

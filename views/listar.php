@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expedición Nova</title>
 
     <link rel="stylesheet" href="css/estiloCss.css">
@@ -57,9 +58,9 @@
                                         Nivel Estabilidad: <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
                                         Dieta: <input type="text" name="dieta" value="<?= $formasVida->getDieta() ?>"><br>
 
-                                        <button type="submit">Guardar</button>
+                                        <br><button type="submit">Guardar</button><br>
                                         <!--Boton Eliminar-->
-                                        <a href="index.php?accion=eliminar&id=<?= $formasVida->getId() ?>">Eliminar</a>
+                                        <br><a href="index.php?accion=eliminar&id=<?= $formasVida->getId() ?>">EVACUAR</a>
 
                                     </form>
                                 </td>
@@ -107,9 +108,9 @@
                                         Nivel Estabilidad: <input type="number" name="nivelEstabilidad" value="<?= $mineral->getNivelEstabilidad() ?>" required><br>
                                         Dureza: <input type="text" name="dureza" value="<?= $mineral->getDureza() ?>"><br>
 
-                                        <button type="submit">Guardar</button>
+                                        <br><button type="submit">Guardar</button><br>
                                         <!--Boton Eliminar-->
-                                        <a href="index.php?accion=eliminar&id=<?= $mineral->getId() ?>">Eliminar</a>
+                                        <br><a href="index.php?accion=eliminar&id=<?= $mineral->getId() ?>">EVACUAR</a>
 
                                     </form>
                                 </td>
@@ -160,9 +161,9 @@
                                         Antiguedad: <input type="text" name="antiguedad" value="<?= $antiguedades->getAntiguedad() ?>"><br>
 
 
-                                        <button type="submit">Guardar</button>
+                                        <br><button type="submit">Guardar</button><br>
                                         <!--Boton Eliminar-->
-                                        <a href="index.php?accion=eliminar&id=<?= $antiguedades->getId() ?>">Eliminar</a>
+                                        <br><a href="index.php?accion=eliminar&id=<?= $antiguedades->getId() ?>">EVACUAR</a>
 
                                     </form>
                                 </td>

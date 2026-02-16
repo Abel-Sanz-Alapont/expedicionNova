@@ -1,5 +1,6 @@
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Expedición Nova</title>
 
             <link rel="stylesheet" href="css/estiloCss.css">
@@ -8,7 +9,7 @@
         <hr>
         <!--Formulario Crear-->
 
-        <form method="POST" action="index.php?accion=crear" ;>
+        <form method="POST" action="index.php?accion=crear" id="form";>
             ID:
             <input type="text" name="id" required><br>
 

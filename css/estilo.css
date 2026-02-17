@@ -7,12 +7,94 @@ elementos p o tambien p,a,td,th
 
 */
 
-:root {
-  background-color: red;
-  padding: 30px;
+body {
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
-  background-color: white;
-  padding: 20px;
+    background: linear-gradient(blue,
+            rgb(0, 204, 255),
+            rgb(149, 39, 177),
+            rgb(149, 39, 177),
+            rgb(149, 39, 177),
+            rgb(0, 204, 255), blue);
+
+}
+
+
+a {
+    color: rgb(68, 255, 0);
+    font-family: sans-serif;
+}
+
+#navbar {
+    text-align: center;
+    color: rgb(0, 255, 4);
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: solid;
+    margin-bottom: 200px;
+
+}
+
+#Container {
+    padding-left: 20%;
+    margin: 0 auto;
+}
+
+.Tabla {
+    backdrop-filter: blur(15px);
+}
+
+th,
+td {
+    text-align: center;
+    color: rgb(0, 255, 4);
+    font-family: sans-serif;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.accionesTabla {
+    text-align: justify;
+
+}
+/* PARA EL FORMULARIO PARA EDITAR Y ELIMINAR LOS CAMPOS */
+.accionesTabla {
+    min-width: 300px; 
+}
+
+/* Cada fila del mini-formulario */
+.fila-tabla {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; 
+    padding-bottom: 2px;
+}
+
+/* Las etiquetas (Nombre, Planeta...) */
+.fila-tabla label {
+    width: 90px;       
+    font-size: 15px; 
+}
+
+/* Los inputs dentro de la tabla */
+.fila-tabla input {
+    flex: 1;           /* Ocupa el resto del espacio */
+    padding: 4px;
+    font-size: 15px;
+    text-align: center;
+
+}
+/* Contenedor de botones */
+.botones-tabla {
+    text-align: center;
+    justify-content: space-between; /* Botones separados a los lados */
+    margin-top: 10px;
+
 }

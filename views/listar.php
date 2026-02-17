@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expedición Nova</title>
 
-    <link rel="stylesheet" href="css/estiloCss.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <html>
 
@@ -15,13 +15,13 @@
 
 <body>
     <div id="navbar">
-        <h1>Gestor Especies</h1>
+        <h1>GESTOR ESPECIES</h1>
         <a href="index.php?accion=crear">Añadir Especie</a>
         <hr>
     </div>
     <!--LISTADO DE Formas de Vida-->
-    <div id="Menu">
-        <div id="tablaVida">
+    <div id="Container">
+        <div id="tablaVida" class="Tabla">
             <h3> Forma de Vida
                 <table border="1" cellpadding="10">
                     <tr>
@@ -51,15 +51,27 @@
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarVida" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $formasVida->getId() ?>"><br>
-                                        Nombre: <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
-                                        Planeta Origen: <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
-                                        Nivel Estabilidad: <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
-                                        Dieta: <input type="text" name="dieta" value="<?= $formasVida->getDieta() ?>"><br>
-
-                                        <br><button type="submit">Guardar</button><br>
-                                        <!--Boton Eliminar-->
-                                        <br><a href="index.php?accion=eliminar&id=<?= $formasVida->getId() ?>">EVACUAR</a>
-
+                                        <div class="fila-tabla">
+                                            <label>Nombre:</label>
+                                            <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Planeta Origen:</label>
+                                            <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Nivel Estabilidad:</label>
+                                            <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Dieta:</label>
+                                            <input type="text" name="dieta" value="<?= $formasVida->getDieta() ?>"><br>
+                                        </div>
+                                        <div class="botones-tabla">
+                                            <!--Botones Guardar y Eliminar-->
+                                            <br><button type="submit">Guardar</button><br>
+                                            <br><a href="index.php?accion=eliminar&id=<?= $formasVida->getId() ?>">EVACUAR</a>
+                                        </div>
                                     </form>
                                 </td>
                             </tr>
@@ -68,12 +80,12 @@
                 </table>
                 <!--Paginador de Formas de Vida-->
                 <?php for ($i = 1; $i <= $totalPaginasFormas; $i++): ?>
-                    Pagina: 
-                    <a href="index.php?accion=index&pActualFormas=<?=  $i ?>"><?= $i ?></a>
+                    Paginador:
+                    <a href="index.php?accion=index&pActualFormas=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>
         <!--LISTADO DE Minerales-->
-        <div id="tablaMinerales">
+        <div id="tablaMinerales" class="Tabla">
             <h3> Lista de Minerales
                 <table border="1" cellpadding="10">
                     <tr>
@@ -102,15 +114,32 @@
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarMineral" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $mineral->getId() ?>"><br>
-                                        Nombre: <input type="text" name="nombre" value="<?= $mineral->getNombre() ?>" required><br>
-                                        Planeta Origen: <input type="text" name="planetaOrigen" value="<?= $mineral->getPlanetaOrigen() ?>" required><br>
-                                        Nivel Estabilidad: <input type="number" name="nivelEstabilidad" value="<?= $mineral->getNivelEstabilidad() ?>" required><br>
-                                        Dureza: <input type="text" name="dureza" value="<?= $mineral->getDureza() ?>"><br>
+                                        <div class="fila-tabla">
+                                            <label>Nombre:</label>
+                                            <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Planeta Origen:</label>
+                                            <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Nivel Estabilidad:</label>
+                                            <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Dureza:</label>
+                                            <input type="text" name="dureza" value="<?= $mineral->getDureza() ?>"><br>
 
-                                        <br><button type="submit">Guardar</button><br>
-                                        <!--Boton Eliminar-->
-                                        <br><a href="index.php?accion=eliminar&id=<?= $mineral->getId() ?>">EVACUAR</a>
+                                        </div>
+                                        <div class="botones-tabla">
+                                            <!--Botones Guardar y Eliminar-->
+                                            <br><button type="submit">Guardar</button><br>
+                                            <br><a href="index.php?accion=eliminar&id=<?= $mineral->getId() ?>">EVACUAR</a>
 
+                                        </div>
+                                        <div>
+
+                                        </div>
                                     </form>
                                 </td>
                             </tr>
@@ -120,12 +149,12 @@
                 </table>
                 <!--Paginador de Minerales-->
                 <?php for ($i = 1; $i <= $totalPaginasMineral; $i++): ?>
-                    Pagina: 
+                    Paginador:
                     <a href="index.php?accion=index&pActualMinerales=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>
         <!--LISTADO DE Antiguedades-->
-        <div id="tablaAntiguedades">
+        <div id="tablaAntiguedades" class="Tabla">
             <h3> Listado de Antiguedades
                 <table border="1" cellpadding="10">
                     <tr>
@@ -155,16 +184,28 @@
                                     <!--Boton Editar-->
                                     <form method="POST" action="index.php?accion=editarAntiguedad" style="display:inline;">
                                         <input type="hidden" name="id" value="<?= $antiguedades->getId() ?>"><br>
-                                        Nombre: <input type="text" name="nombre" value="<?= $antiguedades->getNombre() ?>" required><br>
-                                        Planeta Origen: <input type="text" name="planetaOrigen" value="<?= $antiguedades->getPlanetaOrigen() ?>" required><br>
-                                        Nivel Estabilidad: <input type="number" name="nivelEstabilidad" value="<?= $antiguedades->getNivelEstabilidad() ?>" required><br>
-                                        Antiguedad: <input type="text" name="antiguedad" value="<?= $antiguedades->getAntiguedad() ?>"><br>
+                                        <div class="fila-tabla">
+                                            <label>Nombre:</label>
+                                            <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Planeta Origen:</label>
+                                            <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Nivel Estabilidad:</label>
+                                            <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
+                                        </div>
+                                        <div class="fila-tabla">
+                                            <label>Antiguedad</label>
+                                            Antiguedad: <input type="text" name="antiguedad" value="<?= $antiguedades->getAntiguedad() ?>"><br>
+                                        </div>
+                                        <div class="botones-tabla">
+                                            <!--Botones Guardar y Eliminar-->
+                                            <br><button type="submit">Guardar</button><br>
+                                            <br><a href="index.php?accion=eliminar&id=<?= $antiguedades->getId() ?>">EVACUAR</a>
 
-
-                                        <br><button type="submit">Guardar</button><br>
-                                        <!--Boton Eliminar-->
-                                        <br><a href="index.php?accion=eliminar&id=<?= $antiguedades->getId() ?>">EVACUAR</a>
-
+                                        </div>
                                     </form>
                                 </td>
                             </tr>
@@ -174,7 +215,7 @@
                 </table>
                 <!--Paginador de Antiguedades-->
                 <?php for ($i = 1; $i <= $totalPaginasAntiguedades; $i++): ?>
-                    Pagina: 
+                    Paginador:
                     <a href="index.php?accion=index&pActualAntiguedades=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>

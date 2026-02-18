@@ -13,13 +13,7 @@ body {
 }
 
 body {
-    background: linear-gradient(blue,
-            rgb(0, 204, 255),
-            rgb(149, 39, 177),
-            rgb(149, 39, 177),
-            rgb(149, 39, 177),
-            rgb(0, 204, 255), blue);
-
+    background: linear-gradient(160deg, #c800ff 0%, #09f7fb 49%, #404040 100%);
 }
 
 
@@ -34,7 +28,6 @@ a {
     font-family: sans-serif;
     text-align: center;
     text-decoration: solid;
-    margin-bottom: 200px;
 
 }
 
@@ -85,7 +78,7 @@ h1 {
 
 /* Los inputs dentro de la tabla */
 .fila-tabla input {
-    flex: 1;           /* Ocupa el resto del espacio */
+    flex: 1;           
     padding: 4px;
     font-size: 15px;
     text-align: center;
@@ -94,7 +87,6 @@ h1 {
 /* Contenedor de botones */
 .botones-tabla {
     text-align: center;
-    justify-content: space-between; /* Botones separados a los lados */
     margin-top: 10px;
 
 }

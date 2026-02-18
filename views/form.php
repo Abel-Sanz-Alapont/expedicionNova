@@ -3,9 +3,9 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Expedición Nova</title>
 
-            <link rel="stylesheet" href="css/estiloCss.css">
+            <link rel="stylesheet" href="css/estilo.css">
         </head>
-        <h1>Gestor </h1>
+        <h1>FORMULARIO PARA AÑADIR ENTIDADES </h1>
         <hr>
         <!--Formulario Crear-->
 

@@ -16,7 +16,7 @@
 <body>
     <div id="navbar">
         <h1>GESTOR ESPECIES</h1>
-        <a href="index.php?accion=crear">Añadir Especie</a>
+        <a href="index.php?accion=crear" class="enlaces">Añadir Especie</a>
         <hr>
     </div>
     <!--LISTADO DE Formas de Vida-->
@@ -79,9 +79,9 @@
                     <?php endforeach; ?>
                 </table>
                 <!--Paginador de Formas de Vida-->
+                Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasFormas; $i++): ?>
-                    Paginador:
-                    <a href="index.php?accion=index&pActualFormas=<?= $i ?>"><?= $i ?></a>
+                    <a href="index.php?accion=index&pActualFormas=<?= $i ?>"><?= $i ." " ?></a>
                 <?php endfor; ?>
         </div>
         <!--LISTADO DE Minerales-->
@@ -116,15 +116,15 @@
                                         <input type="hidden" name="id" value="<?= $mineral->getId() ?>"><br>
                                         <div class="fila-tabla">
                                             <label>Nombre:</label>
-                                            <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
+                                            <input type="text" name="nombre" value="<?= $mineral->getNombre() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
                                             <label>Planeta Origen:</label>
-                                            <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
+                                            <input type="text" name="planetaOrigen" value="<?= $mineral->getPlanetaOrigen() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
                                             <label>Nivel Estabilidad:</label>
-                                            <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
+                                            <input type="number" name="nivelEstabilidad" value="<?= $mineral->getNivelEstabilidad() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
                                             <label>Dureza:</label>
@@ -148,8 +148,8 @@
 
                 </table>
                 <!--Paginador de Minerales-->
+                Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasMineral; $i++): ?>
-                    Paginador:
                     <a href="index.php?accion=index&pActualMinerales=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>
@@ -186,19 +186,19 @@
                                         <input type="hidden" name="id" value="<?= $antiguedades->getId() ?>"><br>
                                         <div class="fila-tabla">
                                             <label>Nombre:</label>
-                                            <input type="text" name="nombre" value="<?= $formasVida->getNombre() ?>" required><br>
+                                            <input type="text" name="nombre" value="<?= $antiguedades->getNombre() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
                                             <label>Planeta Origen:</label>
-                                            <input type="text" name="planetaOrigen" value="<?= $formasVida->getPlanetaOrigen() ?>" required><br>
+                                            <input type="text" name="planetaOrigen" value="<?= $antiguedades->getPlanetaOrigen() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
                                             <label>Nivel Estabilidad:</label>
-                                            <input type="number" name="nivelEstabilidad" value="<?= $formasVida->getNivelEstabilidad() ?>" required><br>
+                                            <input type="number" name="nivelEstabilidad" value="<?= $antiguedades->getNivelEstabilidad() ?>" required><br>
                                         </div>
                                         <div class="fila-tabla">
-                                            <label>Antiguedad</label>
-                                            Antiguedad: <input type="text" name="antiguedad" value="<?= $antiguedades->getAntiguedad() ?>"><br>
+                                            <label>Años Antiguedad</label>
+                                            <input type="text" name="antiguedad" value="<?= $antiguedades->getAntiguedad() ?>"><br>
                                         </div>
                                         <div class="botones-tabla">
                                             <!--Botones Guardar y Eliminar-->
@@ -214,8 +214,9 @@
 
                 </table>
                 <!--Paginador de Antiguedades-->
+                Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasAntiguedades; $i++): ?>
-                    Paginador:
+
                     <a href="index.php?accion=index&pActualAntiguedades=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
         </div>

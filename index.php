@@ -2,7 +2,6 @@
 require_once "autoload.php";
 session_start();
 
-
 $gestor = new gestorNave();
 
 $controller = new Controller($gestor);

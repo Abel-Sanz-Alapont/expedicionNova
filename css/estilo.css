@@ -7,80 +7,84 @@ elementos p o tambien p,a,td,th
 
 */
 body {
-    width: max-content;
-    height: 100vh;
-    background-image: linear-gradient(100deg,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(8, 97, 186, 0.84) 8%,
-            rgba(67, 179, 245, 0.63) 15%,
-            rgba(93, 206, 243, 0.62) 36%,
-            rgba(126, 240, 241, 0.6) 51%,
-            rgba(238, 119, 192, 0.76) 70%,
-            rgba(247, 25, 136, 0.85) 91%,
-            rgba(0, 0, 0, 0.59) 100%);
-   
-
+    min-height: 100vh;
+    margin: 0;
+    background-color: #0a0a0a;
+    background-image: linear-gradient(135deg, #050505 0%, #151515 100%);
+    color: #e0e0e0;
+    font-family: sans-serif;
 }
 
 a {
-    color: rgb(255, 255, 255);
-    font-family: sans-serif;
+    color: #00ffcc;
+    text-decoration: none;
 
-    font-size: 20px;
+    font-size: 30px;
+}
+
+a:hover {
+    color: #ff9900;
 
 }
 
 #navbar {
     text-align: center;
+    background-color: #00ff00;
     color: rgb(0, 255, 4);
-    font-family: sans-serif;
     text-align: center;
     text-decoration: solid;
 
 }
 
 #Container {
-    padding-left: 20%;
-    padding-right: 20%;
-    margin-top: 50px;
+    width: 95%;
+    margin-top: 30px auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
 
 }
 
-.Tabla {
-    backdrop-filter: blur(15px);
-    margin-left: auto;
-    margin-right: auto;
-    /* Optional: Set a width if needed */
-    width: 120%;
-
+.Table {
+    background: black;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    padding: 20px;
 }
 
-td,
 th {
+    color: #ff9900;
+    padding: 15px 10px;
+}
+
+td {
     text-align: center;
-    color: rgb(0, 255, 4);
-    font-family: sans-serif;
-    padding-left: 20px;
+    padding: 12px 10px;
+    padding: 10px;
 }
 
-h1 {
-    color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    text-align: center;
+h1{
+    
+    color: #000000;
+    letter-spacing: 2px;
+}
+h3 {
+    color: #00ffcc;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);/* Brillo */
 }
 
-.accionesTabla {
-    text-align: justify;
-
-}
-
-/* PARA EL FORMULARIO PARA EDITAR Y ELIMINAR LOS CAMPOS */
+/* FORMULARIO PARA EL LISTAR Y FORMS */
 .accionesTabla {
     min-width: 300px;
+    text-align: justify;
 }
 
-/* Cada fila del mini-formulario */
-.fila-tabla {
+/* Cada fila del mini-formulario  y la tabla*/
+.fila-tabla,
+.fila-formulario {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
@@ -93,8 +97,9 @@ h1 {
     font-size: 15px;
 }
 
-/* Los inputs dentro de la tabla */
-.fila-tabla input {
+/* Los inputs dentro de la tabla y formulario */
+.fila-tabla input,
+.fila-formulario input {
     flex: 1;
     padding: 4px;
     font-size: 15px;
@@ -102,9 +107,31 @@ h1 {
 
 }
 
-/* Contenedor de botones */
-.botones-tabla {
-    text-align: center;
+/* Contenedor de botones de tabla y formulario */
+.botones-tabla,
+.botones-formulario {
+    text-align: right;
+}
 
+label {
+    color: white;
+    font-size: 50px;
+}
 
+.fila-formulario label {
+    width: 50%;
+    font-size: 20px;
+}
+
+.accionesFormulario {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#containerForm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
 }

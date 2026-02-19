@@ -17,13 +17,14 @@
     <div id="navbar">
         <h1>GESTOR ESPECIES</h1>
        
-        <hr>
+       
     </div>
      <a href="index.php?accion=crear" class="enlaces">Añadir Especie</a>
+      <hr>
     <!--LISTADO DE Formas de Vida-->
     <div id="Container">
         <div id="tablaVida" class="Tabla">
-            <h3> Forma de Vida
+            <h3> Forma de Vida</h3>
                 <table border="1" cellpadding="10">
                     <tr>
                         <th>Id</th>
@@ -87,7 +88,7 @@
         </div>
         <!--LISTADO DE Minerales-->
         <div id="tablaMinerales" class="Tabla">
-            <h3> Lista de Minerales
+            <h3> Lista de Minerales</h3>
                 <table border="1" cellpadding="10">
                     <tr>
                         <th>Id</th>
@@ -156,7 +157,7 @@
         </div>
         <!--LISTADO DE Antiguedades-->
         <div id="tablaAntiguedades" class="Tabla">
-            <h3> Listado de Antiguedades
+            <h3> Listado de Antiguedades</h3>
                 <table border="1" cellpadding="10">
                     <tr>
                         <th>Id</th>

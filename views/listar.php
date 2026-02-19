@@ -16,9 +16,10 @@
 <body>
     <div id="navbar">
         <h1>GESTOR ESPECIES</h1>
-        <a href="index.php?accion=crear" class="enlaces">Añadir Especie</a>
+       
         <hr>
     </div>
+     <a href="index.php?accion=crear" class="enlaces">Añadir Especie</a>
     <!--LISTADO DE Formas de Vida-->
     <div id="Container">
         <div id="tablaVida" class="Tabla">
@@ -79,7 +80,7 @@
                     <?php endforeach; ?>
                 </table>
                 <!--Paginador de Formas de Vida-->
-                Paginador:
+                <h3>Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasFormas; $i++): ?>
                     <a href="index.php?accion=index&pActualFormas=<?= $i ?>"><?= $i ." " ?></a>
                 <?php endfor; ?>
@@ -148,7 +149,7 @@
 
                 </table>
                 <!--Paginador de Minerales-->
-                Paginador:
+                <h3>Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasMineral; $i++): ?>
                     <a href="index.php?accion=index&pActualMinerales=<?= $i ?>"><?= $i ?></a>
                 <?php endfor; ?>
@@ -214,7 +215,7 @@
 
                 </table>
                 <!--Paginador de Antiguedades-->
-                Paginador:
+                <h3>Paginador:
                 <?php for ($i = 1; $i <= $totalPaginasAntiguedades; $i++): ?>
 
                     <a href="index.php?accion=index&pActualAntiguedades=<?= $i ?>"><?= $i ?></a>
